@@ -83,5 +83,37 @@
     "mobile": true,
     "interactive": true,
     "skipReferenceImageTest": true
+  },
+  {
+    "id": "performance_dynamic",
+    "engine": "three.js",
+    "url": "threejs/performance_dynamic.html",
+    "name": "dynamic objects",
+    "mobile": true,
+    "skipReferenceImageTest": true
+  },
+  {
+    "id": "performance_static",
+    "engine": "three.js",
+    "url": "threejs/performance_static.html",
+    "name": "static objects",
+    "mobile": true,
+    "skipReferenceImageTest": true
+  },
+  {
+    "id": "performance_static2",
+    "engine": "three.js",
+    "url": "threejs/performance_static2.html",
+    "name": "static objects2",
+    "mobile": true,
+    "skipReferenceImageTest": true
+  },
+  {
+    "id": "animation_keyframes",
+    "engine": "three.js",
+    "url": "threejs/webgl_animation_keyframes.html",
+    "name": "animation keyframes",
+    "mobile": true,
+    "skipReferenceImageTest": true
   }
 ]
