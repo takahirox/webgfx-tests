@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>three.js performance - matrices</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<style>
+			body {
+				background:#fff;
+				padding:0;
+				margin:0;
+				font-weight: bold;
+				overflow:hidden;
+			}
+		</style>
+	</head>
+	<body>
+
+		<script src="three.js"></script>
+
+		<script>
+
+			function loadOption( key ) {
+
+				var options = location.href.split( '?' )[ 1 ];
+
+				if ( ! options ) return null;
+
+				var optionArray = options.split( '&' );
+
+				for ( var i = 0, il = optionArray.length; i < il; i ++ ) {
+
+					var tmp = optionArray[ i ].split( '=' );
+
+					if ( tmp[ 0 ].toLowerCase() === key ) return tmp[ 1 ];
+
+				}
+
+				return null;
+
+			}
+
+			var objectNum = parseInt( loadOption( 'num' ) ) || 5000;
+
+			var container;
+
+			var camera, scene, renderer;
+
+			var objects;
+
+			var mouseX = 0, mouseY = 0;
+
+			var windowHalfX = window.innerWidth / 2;
+			var windowHalfY = window.innerHeight / 2;
+
+			document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+
+			init();
+			animate();
+
+
+			function init() {
+
+				container = document.createElement( 'div' );
+				document.body.appendChild( container );
+
+				camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 1, 10000 );
+
+				scene = new THREE.Scene();
+				scene.background = new THREE.Color( 0xffffff );
+
+				objects = [];
+
+				for ( var i = 0; i < objectNum; i ++ ) {
+
+					var object = new THREE.Object3D();
+
+					object.position.x = Math.random() * 8000 - 4000;
+					object.position.y = Math.random() * 8000 - 4000;
+					object.position.z = Math.random() * 8000 - 4000;
+					object.rotation.x = Math.random() * 2 * Math.PI;
+					object.rotation.y = Math.random() * 2 * Math.PI;
+					object.scale.x = object.scale.y = object.scale.z = Math.random() * 50 + 100;
+
+					objects.push( object );
+
+					scene.add( object );
+
+				}
+
+				renderer = new THREE.WebGLRenderer();
+				renderer.setPixelRatio( window.devicePixelRatio );
+				renderer.setSize( window.innerWidth, window.innerHeight );
+				container.appendChild( renderer.domElement );
+
+				//
+
+				window.addEventListener( 'resize', onWindowResize, false );
+
+			}
+
+			function onWindowResize() {
+
+				windowHalfX = window.innerWidth / 2;
+				windowHalfY = window.innerHeight / 2;
+
+				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.updateProjectionMatrix();
+
+				renderer.setSize( window.innerWidth, window.innerHeight );
+
+			}
+
+			function onDocumentMouseMove( event ) {
+
+				mouseX = ( event.clientX - windowHalfX ) * 10;
+				mouseY = ( event.clientY - windowHalfY ) * 10;
+
+			}
+
+			//
+
+			function animate() {
+
+				renderer.setAnimationLoop( render );
+
+			}
+
+			function render() {
+
+				renderer.render( scene, camera );
+
+			}
+
+		</script>
+
+	</body>
+</html>

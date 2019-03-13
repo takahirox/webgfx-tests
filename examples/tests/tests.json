@@ -109,10 +109,34 @@
     "skipReferenceImageTest": true
   },
   {
+    "id": "performance_matrices",
+    "engine": "three.js",
+    "url": "threejs/performance_matrices.html",
+    "name": "matrices",
+    "mobile": true,
+    "skipReferenceImageTest": true
+  },
+  {
+    "id": "performance_project",
+    "engine": "three.js",
+    "url": "threejs/performance_project.html",
+    "name": "project",
+    "mobile": true,
+    "skipReferenceImageTest": true
+  },
+  {
     "id": "animation_keyframes",
     "engine": "three.js",
     "url": "threejs/webgl_animation_keyframes.html",
     "name": "animation keyframes",
+    "mobile": true,
+    "skipReferenceImageTest": true
+  },
+  {
+    "id": "gpgpu_birds",
+    "engine": "three.js",
+    "url": "threejs/webgl_gpgpu_birds.html",
+    "name": "gpgpu birds",
     "mobile": true,
     "skipReferenceImageTest": true
   }
