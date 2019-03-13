@@ -71,6 +71,7 @@
 				scene = new THREE.Scene();
 				scene.background = new THREE.Color( 0xffffff );
 				scene.matrixAutoUpdate = false;
+				scene.autoUpdate = false;
 
 				objects = [];
 
@@ -99,6 +100,8 @@
 						scene.add( mesh );
 
 					}
+
+					scene.updateMatrixWorld( true );
 
 				} );
 
