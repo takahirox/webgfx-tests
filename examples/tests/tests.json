@@ -123,6 +123,14 @@
     "skipReferenceImageTest": true
   },
   {
+    "id": "performance_raycast",
+    "engine": "three.js",
+    "url": "threejs/performance_raycast.html",
+    "name": "raycast",
+    "mobile": true,
+    "skipReferenceImageTest": true
+  },
+  {
     "id": "animation_keyframes",
     "engine": "three.js",
     "url": "threejs/webgl_animation_keyframes.html",
