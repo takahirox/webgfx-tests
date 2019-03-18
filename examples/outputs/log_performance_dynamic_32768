@@ -1,0 +1,169 @@
+[{
+  "test_id": "performance_dynamic",
+  "stats": {
+    "perf": {
+      "fps": {
+        "min": 8.73324308999419,
+        "max": 21.696209672437256,
+        "avg": 20.508762187360986,
+        "standard_deviation": 0.9484646119357822
+      },
+      "dt": {
+        "min": 42.74000000441447,
+        "max": 553.8349999987986,
+        "avg": 49.083185988331046,
+        "standard_deviation": 14.874654248574608
+      },
+      "cpu": {
+        "min": 26.30025187916861,
+        "max": 98.94826303980258,
+        "avg": 97.58980086554958,
+        "standard_deviation": 2.1344909889594956
+      }
+    },
+    "webgl": {
+      "drawCalls": {
+        "min": 0,
+        "max": 2990,
+        "avg": 2987.508333333334,
+        "standard_deviation": 86.27789363768423
+      },
+      "useProgramCalls": {
+        "min": 0,
+        "max": 1,
+        "avg": 0.0008333333333333356,
+        "standard_deviation": 0.02885548282196799
+      },
+      "faces": {
+        "min": 0,
+        "max": 2891330,
+        "avg": 2888920.5583333317,
+        "standard_deviation": 83430.72314764079
+      },
+      "vertices": {
+        "min": 0,
+        "max": 8673990,
+        "avg": 8666761.675000016,
+        "standard_deviation": 250292.16944292258
+      },
+      "bindTextures": {
+        "min": 0,
+        "max": 0,
+        "avg": 0,
+        "standard_deviation": 0
+      }
+    }
+  },
+  "numFrames": 1200,
+  "totalTime": 59263.0899999931,
+  "timeToFirstFrame": 293.71999998693354,
+  "avgFps": 20.34954757020254,
+  "numStutterEvents": 1,
+  "totalRenderTime": 58969.370000006165,
+  "cpuTime": 57074.73500017659,
+  "cpuIdleTime": 1776.0049998323666,
+  "cpuIdlePerc": 3.0117415190838583,
+  "pageLoadTime": 288.08999998727813,
+  "result": "pass",
+  "logs": {
+    "errors": [],
+    "warnings": [],
+    "catchErrors": []
+  },
+  "testUUID": "1",
+  "browser": {
+    "name": "Chrome",
+    "code": "chrome",
+    "versionCode": "",
+    "versionName": ""
+  },
+  "device": {
+    "name": "PC",
+    "deviceProduct": "localdevice",
+    "serial": ""
+  }
+},{
+  "test_id": "performance_dynamic",
+  "stats": {
+    "perf": {
+      "fps": {
+        "min": 4.081632653061225,
+        "max": 13.452914798206278,
+        "avg": 12.496022540998455,
+        "standard_deviation": 0.7279002570755605
+      },
+      "dt": {
+        "min": 69,
+        "max": 803,
+        "avg": 80.61301084236861,
+        "standard_deviation": 22.12698278117047
+      },
+      "cpu": {
+        "min": 29.763387297633873,
+        "max": 100,
+        "avg": 93.43447538959936,
+        "standard_deviation": 7.135160405492818
+      }
+    },
+    "webgl": {
+      "drawCalls": {
+        "min": 0,
+        "max": 2990,
+        "avg": 2987.508333333334,
+        "standard_deviation": 86.27789363768423
+      },
+      "useProgramCalls": {
+        "min": 0,
+        "max": 1,
+        "avg": 0.0008333333333333356,
+        "standard_deviation": 0.02885548282196799
+      },
+      "faces": {
+        "min": 0,
+        "max": 2891330,
+        "avg": 2888920.5583333317,
+        "standard_deviation": 83430.72314764079
+      },
+      "vertices": {
+        "min": 0,
+        "max": 8673990,
+        "avg": 8666761.675000016,
+        "standard_deviation": 250292.16944292258
+      },
+      "bindTextures": {
+        "min": 0,
+        "max": 0,
+        "avg": 0,
+        "standard_deviation": 0
+      }
+    }
+  },
+  "numFrames": 1200,
+  "totalTime": 96868,
+  "timeToFirstFrame": 124,
+  "avgFps": 12.403870007442322,
+  "numStutterEvents": 5,
+  "totalRenderTime": 96744,
+  "cpuTime": 89414,
+  "cpuIdleTime": 7241,
+  "cpuIdlePerc": 7.484701893657488,
+  "pageLoadTime": 112,
+  "result": "pass",
+  "logs": {
+    "errors": [],
+    "warnings": [],
+    "catchErrors": []
+  },
+  "testUUID": "2",
+  "browser": {
+    "name": "FirefoxNightly",
+    "code": "firefoxnightly",
+    "versionCode": "",
+    "versionName": ""
+  },
+  "device": {
+    "name": "PC",
+    "deviceProduct": "localdevice",
+    "serial": ""
+  }
+}]

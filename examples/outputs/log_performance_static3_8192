@@ -1,0 +1,169 @@
+[{
+  "test_id": "performance_static3",
+  "stats": {
+    "perf": {
+      "fps": {
+        "min": 0.14037905151440372,
+        "max": 12.471419663909028,
+        "avg": 11.25965161911783,
+        "standard_deviation": 1.239710778377029
+      },
+      "dt": {
+        "min": 77.0650000195019,
+        "max": 7509.730000019772,
+        "avg": 100.5793911592977,
+        "standard_deviation": 287.01178390625927
+      },
+      "cpu": {
+        "min": 88.43848581603507,
+        "max": 99.85627566706741,
+        "avg": 98.83956891487433,
+        "standard_deviation": 0.5047521730373001
+      }
+    },
+    "webgl": {
+      "drawCalls": {
+        "min": 0,
+        "max": 8192,
+        "avg": 8185.173333333337,
+        "standard_deviation": 236.38411527756162
+      },
+      "useProgramCalls": {
+        "min": 0,
+        "max": 1,
+        "avg": 0.0008333333333333356,
+        "standard_deviation": 0.02885548282196799
+      },
+      "faces": {
+        "min": 0,
+        "max": 7921664,
+        "avg": 7915062.61333334,
+        "standard_deviation": 228583.43947340176
+      },
+      "vertices": {
+        "min": 0,
+        "max": 23764992,
+        "avg": 23745187.84000003,
+        "standard_deviation": 685750.3184202069
+      },
+      "bindTextures": {
+        "min": 0,
+        "max": 0,
+        "avg": 0,
+        "standard_deviation": 0
+      }
+    }
+  },
+  "numFrames": 1200,
+  "totalTime": 121124.81000000844,
+  "timeToFirstFrame": 277.57499998551793,
+  "avgFps": 9.929892065795071,
+  "numStutterEvents": 9,
+  "totalRenderTime": 120847.23500002292,
+  "cpuTime": 118951.70499992673,
+  "cpuIdleTime": 1642.9850000713486,
+  "cpuIdlePerc": 1.3595553097023998,
+  "pageLoadTime": 273.365000000922,
+  "result": "pass",
+  "logs": {
+    "errors": [],
+    "warnings": [],
+    "catchErrors": []
+  },
+  "testUUID": "1",
+  "browser": {
+    "name": "Chrome",
+    "code": "chrome",
+    "versionCode": "",
+    "versionName": ""
+  },
+  "device": {
+    "name": "PC",
+    "deviceProduct": "localdevice",
+    "serial": ""
+  }
+},{
+  "test_id": "performance_static3",
+  "stats": {
+    "perf": {
+      "fps": {
+        "min": 1.1848341232227488,
+        "max": 6.0606060606060606,
+        "avg": 5.646391484742327,
+        "standard_deviation": 0.3216123360115206
+      },
+      "dt": {
+        "min": 163,
+        "max": 952,
+        "avg": 177.99165971643038,
+        "standard_deviation": 31.235337398790985
+      },
+      "cpu": {
+        "min": 25.105042016806724,
+        "max": 100,
+        "avg": 97.37045622884663,
+        "standard_deviation": 3.751381489037559
+      }
+    },
+    "webgl": {
+      "drawCalls": {
+        "min": 8192,
+        "max": 8192,
+        "avg": 8192,
+        "standard_deviation": 0
+      },
+      "useProgramCalls": {
+        "min": 0,
+        "max": 1,
+        "avg": 0.0008333333333333356,
+        "standard_deviation": 0.02885548282196799
+      },
+      "faces": {
+        "min": 7921664,
+        "max": 7921664,
+        "avg": 7921664,
+        "standard_deviation": 0
+      },
+      "vertices": {
+        "min": 23764992,
+        "max": 23764992,
+        "avg": 23764992,
+        "standard_deviation": 0
+      },
+      "bindTextures": {
+        "min": 0,
+        "max": 0,
+        "avg": 0,
+        "standard_deviation": 0
+      }
+    }
+  },
+  "numFrames": 1200,
+  "totalTime": 224276,
+  "timeToFirstFrame": 10784,
+  "avgFps": 5.6208195154853575,
+  "numStutterEvents": 3,
+  "totalRenderTime": 213492,
+  "cpuTime": 207066,
+  "cpuIdleTime": 6346,
+  "cpuIdlePerc": 2.9724767204391735,
+  "pageLoadTime": 740,
+  "result": "pass",
+  "logs": {
+    "errors": [],
+    "warnings": [],
+    "catchErrors": []
+  },
+  "testUUID": "2",
+  "browser": {
+    "name": "FirefoxNightly",
+    "code": "firefoxnightly",
+    "versionCode": "",
+    "versionName": ""
+  },
+  "device": {
+    "name": "PC",
+    "deviceProduct": "localdevice",
+    "serial": ""
+  }
+}]
