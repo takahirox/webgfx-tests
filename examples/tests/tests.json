@@ -107,6 +107,14 @@
     "skipReferenceImageTest": true
   },
   {
+    "id": "performance_static3",
+    "engine": "three.js",
+    "url": "threejs/performance_static3.html",
+    "name": "static objects3",
+    "mobile": true,
+    "skipReferenceImageTest": true
+  },
+  {
     "id": "performance_matrices",
     "engine": "three.js",
     "url": "threejs/performance_matrices.html",
