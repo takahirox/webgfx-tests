@@ -1,0 +1,169 @@
+[{
+  "test_id": "animation_keyframes",
+  "stats": {
+    "perf": {
+      "fps": {
+        "min": 4.369483527047127,
+        "max": 39.95205753096325,
+        "avg": 31.287398787985595,
+        "standard_deviation": 7.088352111710787
+      },
+      "dt": {
+        "min": 20.040000000000873,
+        "max": 272.7999999999993,
+        "avg": 32.26467055879901,
+        "standard_deviation": 16.2940547763574
+      },
+      "cpu": {
+        "min": 34.86605357856565,
+        "max": 94.95736682864214,
+        "avg": 65.94631200467985,
+        "standard_deviation": 13.214094686158623
+      }
+    },
+    "webgl": {
+      "drawCalls": {
+        "min": 71,
+        "max": 71,
+        "avg": 71,
+        "standard_deviation": 0
+      },
+      "useProgramCalls": {
+        "min": 11,
+        "max": 11,
+        "avg": 11,
+        "standard_deviation": 0
+      },
+      "faces": {
+        "min": 141802,
+        "max": 141802,
+        "avg": 141802,
+        "standard_deviation": 0
+      },
+      "vertices": {
+        "min": 425406,
+        "max": 425406,
+        "avg": 425406,
+        "standard_deviation": 0
+      },
+      "bindTextures": {
+        "min": 21,
+        "max": 21,
+        "avg": 21,
+        "standard_deviation": 0
+      }
+    }
+  },
+  "numFrames": 1200,
+  "totalTime": 46647.22,
+  "timeToFirstFrame": 7619.160000000001,
+  "avgFps": 30.747108618773265,
+  "numStutterEvents": 239,
+  "totalRenderTime": 39028.06,
+  "cpuTime": 25196.519999999902,
+  "cpuIdleTime": 13488.8200000001,
+  "cpuIdlePerc": 34.56185113992369,
+  "pageLoadTime": 7452.64,
+  "result": "pass",
+  "logs": {
+    "errors": [],
+    "warnings": [],
+    "catchErrors": []
+  },
+  "testUUID": "1",
+  "browser": {
+    "name": "Firefox Reality",
+    "code": "fxr",
+    "versionCode": "130091627",
+    "versionName": "1.1.2"
+  },
+  "device": {
+    "name": "Oculus Go",
+    "deviceProduct": "Pacific",
+    "serial": "1KWPH812ZF8202"
+  }
+},{
+  "test_id": "animation_keyframes",
+  "stats": {
+    "perf": {
+      "fps": {
+        "min": 32.317636195790755,
+        "max": 65.08600650822021,
+        "avg": 56.323276970899734,
+        "standard_deviation": 6.44488782215044
+      },
+      "dt": {
+        "min": 7.200000007287599,
+        "max": 51.19999998714775,
+        "avg": 17.847539616346808,
+        "standard_deviation": 6.719499107732436
+      },
+      "cpu": {
+        "min": 15.438596509501943,
+        "max": 89.88764046046099,
+        "avg": 50.64430219963062,
+        "standard_deviation": 14.003042840168526
+      }
+    },
+    "webgl": {
+      "drawCalls": {
+        "min": 71,
+        "max": 71,
+        "avg": 71,
+        "standard_deviation": 0
+      },
+      "useProgramCalls": {
+        "min": 10,
+        "max": 10,
+        "avg": 10,
+        "standard_deviation": 0
+      },
+      "faces": {
+        "min": 141802,
+        "max": 141802,
+        "avg": 141802,
+        "standard_deviation": 0
+      },
+      "vertices": {
+        "min": 425406,
+        "max": 425406,
+        "avg": 425406,
+        "standard_deviation": 0
+      },
+      "bindTextures": {
+        "min": 19,
+        "max": 19,
+        "avg": 19,
+        "standard_deviation": 0
+      }
+    }
+  },
+  "numFrames": 1200,
+  "totalTime": 29755.199999999604,
+  "timeToFirstFrame": 8070.099999997183,
+  "avgFps": 55.337535911748894,
+  "numStutterEvents": 256,
+  "totalRenderTime": 21685.10000000242,
+  "cpuTime": 10833.900000172434,
+  "cpuIdleTime": 10565.299999827403,
+  "cpuIdlePerc": 48.72147234657079,
+  "pageLoadTime": 8040.500000002794,
+  "result": "pass",
+  "logs": {
+    "errors": [],
+    "warnings": [],
+    "catchErrors": []
+  },
+  "testUUID": "2",
+  "browser": {
+    "name": "Oculus Browser",
+    "code": "oculus",
+    "versionCode": "144932646",
+    "versionName": "5.7.8.144932646"
+  },
+  "device": {
+    "name": "Oculus Go",
+    "deviceProduct": "Pacific",
+    "serial": "1KWPH812ZF8202"
+  }
+}]
