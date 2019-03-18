@@ -83,34 +83,26 @@
     "skipReferenceImageTest": true
   },
   {
-    "id": "performance_dynamic",
+    "id": "performance_practical",
     "engine": "three.js",
-    "url": "threejs/performance_dynamic.html",
-    "name": "dynamic objects",
+    "url": "threejs/performance_practical.html",
+    "name": "simple practical app",
     "mobile": true,
     "skipReferenceImageTest": true
   },
   {
-    "id": "performance_static",
+    "id": "performance_drawcall",
     "engine": "three.js",
-    "url": "threejs/performance_static.html",
-    "name": "static objects",
+    "url": "threejs/performance_drawcall.html",
+    "name": "drawcall intensive test",
     "mobile": true,
     "skipReferenceImageTest": true
   },
   {
-    "id": "performance_static2",
+    "id": "performance_webgl",
     "engine": "three.js",
-    "url": "threejs/performance_static2.html",
-    "name": "static objects2",
-    "mobile": true,
-    "skipReferenceImageTest": true
-  },
-  {
-    "id": "performance_static3",
-    "engine": "three.js",
-    "url": "threejs/performance_static3.html",
-    "name": "static objects3",
+    "url": "threejs/performance_webgl.html",
+    "name": "drawcall and bind buffer intensive test",
     "mobile": true,
     "skipReferenceImageTest": true
   },
@@ -118,7 +110,7 @@
     "id": "performance_matrices",
     "engine": "three.js",
     "url": "threejs/performance_matrices.html",
-    "name": "matrices",
+    "name": "matrices update intensive test",
     "mobile": true,
     "skipReferenceImageTest": true
   },
@@ -126,7 +118,7 @@
     "id": "performance_project",
     "engine": "three.js",
     "url": "threejs/performance_project.html",
-    "name": "project",
+    "name": "project object intensive test",
     "mobile": true,
     "skipReferenceImageTest": true
   },
@@ -134,23 +126,23 @@
     "id": "performance_raycast",
     "engine": "three.js",
     "url": "threejs/performance_raycast.html",
-    "name": "raycast",
+    "name": "raycast intensive test",
     "mobile": true,
     "skipReferenceImageTest": true
   },
   {
-    "id": "animation_keyframes",
+    "id": "performance_complex_model",
     "engine": "three.js",
-    "url": "threejs/webgl_animation_keyframes.html",
-    "name": "animation keyframes",
+    "url": "threejs/performance_complex_model.html",
+    "name": "rendering complex model test",
     "mobile": true,
     "skipReferenceImageTest": true
   },
   {
-    "id": "gpgpu_birds",
+    "id": "performance_gpgpu",
     "engine": "three.js",
-    "url": "threejs/webgl_gpgpu_birds.html",
-    "name": "gpgpu birds",
+    "url": "threejs/performance_gpgpu.html",
+    "name": "GPGPU intensive test",
     "mobile": true,
     "skipReferenceImageTest": true
   }
