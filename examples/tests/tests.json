@@ -153,5 +153,29 @@
     "name": "GPGPU intensive test",
     "mobile": true,
     "skipReferenceImageTest": true
+  },
+  {
+    "id": "performance_matrices_raw",
+    "engine": "raw",
+    "url": "raw/performance_matrices.html",
+    "name": "raw matrices update intensive test",
+    "mobile": true,
+    "skipReferenceImageTest": true
+  },
+  {
+    "id": "performance_matrices_raw_float32",
+    "engine": "raw",
+    "url": "raw/performance_matrices_float32.html",
+    "name": "raw matrices update intensive test with Float32Array",
+    "mobile": true,
+    "skipReferenceImageTest": true
+  },
+  {
+    "id": "performance_matrices_raw_float64",
+    "engine": "raw",
+    "url": "raw/performance_matrices_float64.html",
+    "name": "raw matrices update intensive test with Float64Array",
+    "mobile": true,
+    "skipReferenceImageTest": true
   }
 ]
