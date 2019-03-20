@@ -31,6 +31,51 @@ program
 });
 
 //-----------------------------------------------------------------------------
+// GENERATE INDEX
+//-----------------------------------------------------------------------------
+program
+.command('create-page')
+.description('Generate an index.html page with the links from the tests')
+.option("-c, --configfile <configFile>", "Config file (default webgfx-tests.config.json)")
+.action(options => {
+  const configfile = options.configfile || 'webgfx-tests.config.json';
+  const testsDb = TestUtils.getTestsDb(configfile);
+  if (testsDb === false) {
+    console.log(`${chalk.red('ERROR')}: error loading config file: ${chalk.yellow(configfile)}. Please use ${chalk.yellow('-c <config filename>')}`);
+    return;
+  }
+  var testRows = '';
+  testsDb.forEach(test => {
+    testRows += `<tr v-for="test in tests">
+      <td>${test.id}</td>
+      <td>${test.name}</td>
+      <td>${test.engine}</td>
+      <td><a href="${test.url}">launch</a></td>
+    </tr>`;
+
+  });
+
+  var outputHTML = `
+  <table>
+    <thead>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Engine</th>
+      <th>Launch</th>
+    </thead>
+    <tbody>${testRows}</tbody>
+  </table>`;
+
+  const fs = require('fs');
+  fs.writeFile("index.html", outputHTML, function(err) {
+    if(err) {
+        return console.log(err);
+    }
+    console.log("Index file generated: index.html");
+  });
+});
+
+//-----------------------------------------------------------------------------
 // LIST TESTS
 //-----------------------------------------------------------------------------
 program
@@ -40,7 +85,7 @@ program
   .option("-v, --verbose", "Show all the information available")
   .action((options) => {
     console.log('Tests list\n----------');
-    
+
     const configfile = options.configfile || 'webgfx-tests.config.json';
     const testsDb = TestUtils.getTestsDb(configfile);
     if (testsDb === false) {
@@ -53,7 +98,7 @@ program
     } else {
       testsDb.forEach(test => {
         console.log(`- ${chalk.yellow(test.id)}: ${test.name}`);
-      });  
+      });
     }
   });
 
@@ -305,7 +350,7 @@ program
               console.log('Unrecognized browser: ', manifest.package);
             } else {
               console.log(`Installing package ${chalk.yellow(apk)} (${chalk.yellow(browserData.name + ' v.' + manifest.versionName + ' - c.' + manifest.versionCode)}) on device: ${chalk.yellow(device.name)} (serial: ${chalk.yellow(device.serial)})`);
-              
+
               if (device.existAPK) {
                 await device.removeAPK(browserData.package);
               }
@@ -323,8 +368,13 @@ program
               const versionCode = browser.versionCode ? 'v.' + browser.versionCode : '';
 
               browser.info = `${browser.name} (${browser.package}) ${versionName} ${versionCode} ${extraInfo}`;
+              var generalOptions = {
+                numTimes: options.numtimes || 1,
+                overrideParams: options.overrideparams,
+                extraParams: options.launchparams // @todo Rename to browserLaunchExtraParams
+              };
 
-              var testsManager = testsManagers[device.serial] = new TestUtils.TestsManager(device, testsToRun, browsersToRun, {numTimes: options.numtimes || 1});
+              var testsManager = testsManagers[device.serial] = new TestUtils.TestsManager(device, testsToRun, browsersToRun, generalOptions);
               await testsManager.runTests();
             }
             reader.close();
@@ -355,6 +405,8 @@ program
             overrideParams: options.overrideparams,
             extraParams: options.launchparams
           };
+
+          console.log(generalOptions);
 
           var testsManager = testsManagers[device.serial] = new TestUtils.TestsManager(device, testsToRun, browsersToRun, generalOptions, {});
           await testsManager.runTests();

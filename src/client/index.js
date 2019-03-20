@@ -122,9 +122,20 @@ window.TESTER = {
           }
 
           addStyleString(`.gfxtests-canvas {width: ${this.canvasWidth}px !important; height: ${this.canvasHeight}px !important;}`);
+
+          // To fix A-Frame
+          addStyleString(`a-scene .a-canvas.gfxtests-canvas {width: ${this.canvasWidth}px !important; height: ${this.canvasHeight}px !important;}`);
+
           this.canvas.classList.add('gfxtests-canvas');
-          this.canvas.width = this.canvasWidth;
-          this.canvas.height = this.canvasHeight;
+
+          this.onResize();
+/*
+          var e = document.createEventObject ? document.createEventObject() : document.createEvent("Events");
+          if (e.initEvent) {
+            e.initEvent('resize', true, true);
+          }
+          window.dispatchEvent ? window.dispatchEvent(e) : window.fireEvent("on" + eventType, e);
+          */
 
           WebGLStats.setupExtensions(context);
 
@@ -531,8 +542,8 @@ window.TESTER = {
       #test_images img:hover {
         top: 0px; 
         left: 0px;
-        height: 80%; 
-        width: 80%; 
+        height: 80%;
+        width: 80%;
         position: fixed;
       }
       */
@@ -776,9 +787,11 @@ window.TESTER = {
 
     Math.random = seedrandom(this.randomSeed);
 
-    this.handleSize();
     CanvasHook.enable(Object.assign({fakeWebGL: typeof parameters['fake-webgl'] !== 'undefined'}, {width: this.canvasWidth, height: this.canvasHeight}));
     this.hookModals();
+
+    this.onResize();
+    window.addEventListener('resize', this.onResize.bind(this));
 
     this.initServer();
 
@@ -808,12 +821,16 @@ window.TESTER = {
         navigator.getVRDisplays().then(displays => {
           var device = displays[0];
           //if (device.isPresenting) device.exitPresent();
-          device.requestPresent( [ { source: canvas } ] );
+          if (device) {
+            device.requestPresent( [ { source: canvas } ] );
+          }
         }), 2000}); // @fix to make it work on FxR
     }
   },
 
-  handleSize: function() {
+  onResize: function (e) {
+    if (e && e.origin === 'webgfxtest') return;
+
     const DEFAULT_WIDTH = 800;
     const DEFAULT_HEIGHT = 600;
     this.canvasWidth = DEFAULT_WIDTH;
@@ -825,6 +842,18 @@ window.TESTER = {
       window.innerWidth = this.canvasWidth;
       window.innerHeight = this.canvasHeight;
     }
+
+    if (this.canvas) {
+      this.canvas.width = this.canvasWidth;
+      this.canvas.height = this.canvasHeight;
+    }
+
+    var e = document.createEventObject ? document.createEventObject() : document.createEvent("Events");
+    if (e.initEvent) {
+      e.initEvent('resize', true, true);
+    }
+    e.origin = 'webgfxtest';
+    window.dispatchEvent ? window.dispatchEvent(e) : window.fireEvent("on" + eventType, e);
   }
 };
 
