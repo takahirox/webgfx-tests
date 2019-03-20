@@ -452,16 +452,16 @@ Object.assign( Object3D.prototype, {
 			cameraProjectionMatrix.set(
 				0.8864625814548678, 0, 0, 0,
 				0, 1.7320508075688774, 0, 0,
-				0, 0, -1.0002000200020003, -1,
-				0, 0, -2.000200020002, 0
+				0, 0, -1.0002000200020003, -2.000200020002,
+				0, 0, -1 , 0
 			);
 
 			var cameraMatrixWorldInverse = new Matrix4();
 			cameraMatrixWorldInverse.set(
 				1, 0, 0, 0,
-				0, 1, 0, 0,
+				0, 1, 0, -1.6,
 				0, 0, 1, 0,
-				0, -1.6, 0, 1
+				0, 0, 0, 1
 			);
 
 			var float32ArrayMatrix3 = new Float32Array( 9 );
@@ -527,6 +527,7 @@ Object.assign( Object3D.prototype, {
 				canvas.style.height = windowHeight + 'px';
 
 				gl = canvas.getContext( 'webgl' );
+				gl.viewport( 0, 0, windowWidth * devicePixelRatio, windowHeight * devicePixelRatio );
 
 				container.appendChild( canvas );
 
@@ -541,7 +542,7 @@ Object.assign( Object3D.prototype, {
 					object.position.x = Math.random() * 1000 - 500;
 					object.position.y = Math.random() * 1000 - 500;
 					object.position.z = Math.random() * 1000 - 500 - 3000;
-					object.scale.x = object.scale.y = object.scale.z = Math.random() * 50 + 100 + 100;
+					object.scale.x = object.scale.y = object.scale.z = Math.random() * 50 + 100;
 					object.updateMatrix();
 					object.matrixAutoUpdate = false;
 					objects.push( object );
@@ -557,8 +558,6 @@ Object.assign( Object3D.prototype, {
 			function initWebGLResources() {
 
 				// initialize configurations
-
-				gl.viewport( 0, 0, windowWidth * devicePixelRatio, windowHeight * devicePixelRatio );
 
 				gl.enable( gl.DEPTH_TEST );
 				gl.depthFunc( gl.LEQUAL );
@@ -623,6 +622,8 @@ Object.assign( Object3D.prototype, {
 				glIndexBuffer = gl.createBuffer();
 				gl.bindBuffer( gl.ELEMENT_ARRAY_BUFFER, glIndexBuffer );
 				gl.bufferData( gl.ELEMENT_ARRAY_BUFFER, indexData, gl.STATIC_DRAW );
+
+				//
 
 			}
 
