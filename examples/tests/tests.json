@@ -177,5 +177,13 @@
     "name": "raw matrices update intensive test with Float64Array",
     "mobile": true,
     "skipReferenceImageTest": true
+  },
+  {
+    "id": "performance_drawcall_raw",
+    "engine": "raw",
+    "url": "raw/performance_drawcall.html",
+    "name": "raw drawcall intensive test",
+    "mobile": true,
+    "skipReferenceImageTest": true
   }
 ]
