@@ -551,6 +551,8 @@ Object.assign( Object3D.prototype, {
 
 				}
 
+				objects.sort( function ( a, b ) { return b.position.z - a.position.z; } );
+
 				root.updateMatrixWorld( true );
 
 			}
@@ -654,8 +656,6 @@ Object.assign( Object3D.prototype, {
 				gl.uniformMatrix4fv( glUniformLocations.projectionMatrix, false, float32ArrayMatrix4 );
 
 				var count = indexData.length;
-
-				// @TODO: sort with depth
 
 				for ( var i = 0, il = objects.length; i < il; i ++ ) {
 
