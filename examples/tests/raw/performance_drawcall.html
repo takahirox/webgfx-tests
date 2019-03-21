@@ -563,9 +563,12 @@ Object.assign( Object3D.prototype, {
 
 				// initialize configurations
 
+				gl.disable( gl.BLEND );
+				gl.enable( gl.CULL_FACE );
 				gl.enable( gl.DEPTH_TEST );
 				gl.depthFunc( gl.LEQUAL );
-				gl.enable( gl.CULL_FACE );
+				gl.depthMask( true );
+				gl.colorMask( true, true, true, true );
 
 				// initialize vertex and fragment shaders
 
