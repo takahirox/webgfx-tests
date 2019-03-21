@@ -185,5 +185,13 @@
     "name": "raw drawcall intensive test",
     "mobile": true,
     "skipReferenceImageTest": true
+  },
+  {
+    "id": "performance_webgl_raw",
+    "engine": "raw",
+    "url": "raw/performance_webgl.html",
+    "name": "raw drawcall and binding buffer intensive test",
+    "mobile": true,
+    "skipReferenceImageTest": true
   }
 ]
