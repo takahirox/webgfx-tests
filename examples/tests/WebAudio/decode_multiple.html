@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>WebAudio decode blocking</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<style>
+			body {
+				background:#fff;
+				padding:0;
+				margin:0;
+				font-weight: bold;
+				overflow:hidden;
+			}
+		</style>
+	</head>
+	<body>
+
+		<script src="../threejs/three.js"></script>
+		<script src="../threejs/stats.min.js"></script>
+
+		<div style="text-align: center;">
+			<div style="display: inline-block;">
+				<button id="play" type="button" onclick="onClickButton()">Play</button>
+				<input type="radio" id="mp3" name="format" value="mp3" checked> mp3
+				<input type="radio" id="ogg" name="format" value="ogg"> ogg
+			</div>
+		</div>
+
+		<script>
+
+			var container;
+			var stats;
+
+			var camera, scene, renderer;
+
+			var box;
+
+			init();
+			animate();
+
+			function init() {
+
+				container = document.createElement( 'div' );
+				document.body.appendChild( container );
+
+				stats = new Stats();
+				container.appendChild( stats.dom );
+
+				camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 1, 10000 );
+
+				scene = new THREE.Scene();
+				scene.background = new THREE.Color( 0xffffff );
+
+				var light = new THREE.DirectionalLight( 0xffffff );
+				light.position.set( 1, 1, 1 );
+				scene.add( light );
+
+				box = new THREE.Mesh(
+
+					new THREE.BoxBufferGeometry( 10, 10, 10 ),
+					new THREE.MeshStandardMaterial( { color: 0xaaaaaa } )
+
+				);
+
+				box.rotation.x = Math.PI / 8;
+				box.position.z = - 50;
+
+				scene.add( box );
+
+				renderer = new THREE.WebGLRenderer();
+				renderer.setPixelRatio( window.devicePixelRatio );
+				renderer.setSize( window.innerWidth, window.innerHeight );
+				container.appendChild( renderer.domElement );
+
+				//
+
+				window.addEventListener( 'resize', onWindowResize, false );
+
+			}
+
+			function onWindowResize() {
+
+				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.updateProjectionMatrix();
+
+				renderer.setSize( window.innerWidth, window.innerHeight );
+
+			}
+
+			function animate() {
+
+				renderer.setAnimationLoop( render );
+
+			}
+
+			function render() {
+
+				box.rotation.y += 0.01;
+
+				stats.update();
+
+				renderer.render( scene, camera );
+
+			}
+
+			function playMusic() {
+
+				var url = document.getElementById( 'mp3' ).checked ? '358232_j_s_song.mp3' : '358232_j_s_song.ogg';
+				var context = new AudioContext();
+
+				fetch( url )
+					.then( response => {
+
+						return response.arrayBuffer();
+
+					} )
+					.then( arrayBuffer => {
+
+						return context.decodeAudioData( arrayBuffer );
+
+					} )
+					.then( audioBuffer => {
+
+						var source = context.createBufferSource();
+						source.buffer = audioBuffer;
+						source.connect( context.destination );
+						source.start( 0, 0, 10 );
+
+					} );
+
+			}
+
+			function onClickButton() {
+
+				playMusic();
+
+			}
+
+		</script>
+
+	</body>
+</html>
