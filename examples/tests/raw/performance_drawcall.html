@@ -663,6 +663,8 @@ Object.assign( Object3D.prototype, {
 
 				gl.useProgram( glProgram );
 
+				// bind buffer just once for all objects
+
 				gl.bindBuffer( gl.ARRAY_BUFFER, glPositionBuffer );
 				gl.enableVertexAttribArray( glAttributeLocations.position );
 				gl.vertexAttribPointer( glAttributeLocations.position, 3, gl.FLOAT, false, 0, 0 );
