@@ -639,6 +639,11 @@ Object.assign( Object3D.prototype, {
 
 				//
 
+				gl.useProgram( glProgram );
+
+				gl.enableVertexAttribArray( glAttributeLocations.position );
+				gl.enableVertexAttribArray( glAttributeLocations.normal );
+
 			}
 
 			function onWindowResize() {
@@ -668,8 +673,6 @@ Object.assign( Object3D.prototype, {
 
 				gl.clear( gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT | gl.STENCIL_BUFFER_BIT );
 
-				gl.useProgram( glProgram );
-
 				float32ArrayMatrix4.set( cameraProjectionMatrix.elements );
 				gl.uniformMatrix4fv( glUniformLocations.projectionMatrix, false, float32ArrayMatrix4 );
 
@@ -682,11 +685,9 @@ Object.assign( Object3D.prototype, {
 					// binding buffer for each object
 
 					gl.bindBuffer( gl.ARRAY_BUFFER, glPositionBuffers[ i ] );
-					gl.enableVertexAttribArray( glAttributeLocations.position );
 					gl.vertexAttribPointer( glAttributeLocations.position, 3, gl.FLOAT, false, 0, 0 );
 
 					gl.bindBuffer( gl.ARRAY_BUFFER, glNormalBuffers[ i ] );
-					gl.enableVertexAttribArray( glAttributeLocations.normal );
 					gl.vertexAttribPointer( glAttributeLocations.normal, 3, gl.FLOAT, false, 0, 0 );
 
 					gl.bindBuffer( gl.ELEMENT_ARRAY_BUFFER, glIndexBuffers[ i ] );

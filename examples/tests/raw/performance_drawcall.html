@@ -632,6 +632,11 @@ Object.assign( Object3D.prototype, {
 
 				//
 
+				gl.useProgram( glProgram );
+
+				gl.enableVertexAttribArray( glAttributeLocations.position );
+				gl.enableVertexAttribArray( glAttributeLocations.normal );
+
 			}
 
 			function onWindowResize() {
@@ -661,16 +666,13 @@ Object.assign( Object3D.prototype, {
 
 				gl.clear( gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT | gl.STENCIL_BUFFER_BIT );
 
-				gl.useProgram( glProgram );
-
 				// bind buffer just once for all objects
+				// to reproduce the Three.js WebGLRenderer behavior
 
 				gl.bindBuffer( gl.ARRAY_BUFFER, glPositionBuffer );
-				gl.enableVertexAttribArray( glAttributeLocations.position );
 				gl.vertexAttribPointer( glAttributeLocations.position, 3, gl.FLOAT, false, 0, 0 );
 
 				gl.bindBuffer( gl.ARRAY_BUFFER, glNormalBuffer );
-				gl.enableVertexAttribArray( glAttributeLocations.normal );
 				gl.vertexAttribPointer( glAttributeLocations.normal, 3, gl.FLOAT, false, 0, 0 );
 
 				gl.bindBuffer( gl.ELEMENT_ARRAY_BUFFER, glIndexBuffer );
