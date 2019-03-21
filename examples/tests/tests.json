@@ -193,5 +193,13 @@
     "name": "raw drawcall and binding buffer intensive test",
     "mobile": true,
     "skipReferenceImageTest": true
+  },
+  {
+    "id": "webaudio_decode_blocking",
+    "engine": "three.js",
+    "url": "WebAudio/decode_blocking.html",
+    "name": "To see WebAudio decode blocking issue",
+    "mobile": true,
+    "skipReferenceImageTest": true
   }
 ]
