@@ -195,10 +195,18 @@
     "skipReferenceImageTest": true
   },
   {
-    "id": "webaudio_decode_blocking",
+    "id": "webaudio_decode_single",
     "engine": "three.js",
-    "url": "WebAudio/decode_blocking.html",
-    "name": "To see WebAudio decode blocking issue",
+    "url": "WebAudio/decode_single.html",
+    "name": "To see WebAudio decode performance issue",
+    "mobile": true,
+    "skipReferenceImageTest": true
+  },
+  {
+    "id": "webaudio_decode_multiple",
+    "engine": "three.js",
+    "url": "WebAudio/decode_multiple.html",
+    "name": "To see WebAudio decode performance issue. You can start another music before the former ends.",
     "mobile": true,
     "skipReferenceImageTest": true
   }
