@@ -467,7 +467,7 @@ Object.assign( Object3D.prototype, {
 			var float32ArrayMatrix3 = new Float32Array( 9 );
 			var float32ArrayMatrix4 = new Float32Array( 16 );
 
-			var glPositionBuffer, glNormalBuffer, glIndexBuffer, glProgram;
+			var glPositionBuffers = [], glNormalBuffers = [], glIndexBuffers = [], glProgram;
 			var glAttributeLocations = {};
 			var glUniformLocations = {};
 
@@ -618,17 +618,24 @@ Object.assign( Object3D.prototype, {
 
 				// initialize buffers
 
-				glPositionBuffer = gl.createBuffer();
-				gl.bindBuffer( gl.ARRAY_BUFFER, glPositionBuffer );
-				gl.bufferData( gl.ARRAY_BUFFER, positionData, gl.STATIC_DRAW );
+				for ( var i = 0, il = objects.length; i < il; i ++ ) {
 
-				glNormalBuffer = gl.createBuffer();
-				gl.bindBuffer( gl.ARRAY_BUFFER, glNormalBuffer );
-				gl.bufferData( gl.ARRAY_BUFFER, normalData, gl.STATIC_DRAW );
+					var glPositionBuffer = gl.createBuffer();
+					gl.bindBuffer( gl.ARRAY_BUFFER, glPositionBuffer );
+					gl.bufferData( gl.ARRAY_BUFFER, positionData, gl.STATIC_DRAW );
+					glPositionBuffers.push( glPositionBuffer );
 
-				glIndexBuffer = gl.createBuffer();
-				gl.bindBuffer( gl.ELEMENT_ARRAY_BUFFER, glIndexBuffer );
-				gl.bufferData( gl.ELEMENT_ARRAY_BUFFER, indexData, gl.STATIC_DRAW );
+					var glNormalBuffer = gl.createBuffer();
+					gl.bindBuffer( gl.ARRAY_BUFFER, glNormalBuffer );
+					gl.bufferData( gl.ARRAY_BUFFER, normalData, gl.STATIC_DRAW );
+					glNormalBuffers.push( glNormalBuffer );
+
+					var glIndexBuffer = gl.createBuffer();
+					gl.bindBuffer( gl.ELEMENT_ARRAY_BUFFER, glIndexBuffer );
+					gl.bufferData( gl.ELEMENT_ARRAY_BUFFER, indexData, gl.STATIC_DRAW );
+					glIndexBuffers.push( glIndexBuffer );
+
+				}
 
 				//
 
@@ -674,15 +681,15 @@ Object.assign( Object3D.prototype, {
 
 					// binding buffer for each object
 
-					gl.bindBuffer( gl.ARRAY_BUFFER, glPositionBuffer );
+					gl.bindBuffer( gl.ARRAY_BUFFER, glPositionBuffers[ i ] );
 					gl.enableVertexAttribArray( glAttributeLocations.position );
 					gl.vertexAttribPointer( glAttributeLocations.position, 3, gl.FLOAT, false, 0, 0 );
 
-					gl.bindBuffer( gl.ARRAY_BUFFER, glNormalBuffer );
+					gl.bindBuffer( gl.ARRAY_BUFFER, glNormalBuffers[ i ] );
 					gl.enableVertexAttribArray( glAttributeLocations.normal );
 					gl.vertexAttribPointer( glAttributeLocations.normal, 3, gl.FLOAT, false, 0, 0 );
 
-					gl.bindBuffer( gl.ELEMENT_ARRAY_BUFFER, glIndexBuffer );
+					gl.bindBuffer( gl.ELEMENT_ARRAY_BUFFER, glIndexBuffers[ i ] );
 
 					object.modelViewMatrix.multiplyMatrices( cameraMatrixWorldInverse, object.matrixWorld );
 					float32ArrayMatrix4.set( object.modelViewMatrix.elements );
