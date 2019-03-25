@@ -139,6 +139,14 @@
     "skipReferenceImageTest": true
   },
   {
+    "id": "performance_physics",
+    "engine": "three.js",
+    "url": "threejs/performance_physics.html",
+    "name": "physics stress test",
+    "mobile": true,
+    "skipReferenceImageTest": true
+  },
+  {
     "id": "performance_complex_model",
     "engine": "three.js",
     "url": "threejs/performance_complex_model.html",
