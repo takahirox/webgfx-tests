@@ -1,0 +1,218 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>three.js physics</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<!-- Origin Trial Token, feature = WebXR Device API (For Chrome M69+), origin = https://threejs.org, expires = 2019-03-06 -->
+		<meta http-equiv="origin-trial" data-feature="WebXR Device API (For Chrome M69+)" data-expires="2019-03-06" content="AvDjbxYpoTgOL1PS0JEra7KFCehfTlKnXpU/ORSwNdCQ35cX70cTUkXOnQ26A5XJi3eXHSKpBPchdt5lbcxDuAIAAABTeyJvcmlnaW4iOiJodHRwczovL3RocmVlanMub3JnOjQ0MyIsImZlYXR1cmUiOiJXZWJYUkRldmljZU02OSIsImV4cGlyeSI6MTU1MTgzMDM5OX0=">
+		<style>
+			body {
+				font-family: Monospace;
+				background-color: #101010;
+				color: #fff;
+				margin: 0px;
+				overflow: hidden;
+			}
+			a {
+				color: #f00;
+			}
+		</style>
+	</head>
+	<body>
+
+		<script src="three.js"></script>
+		<script src="js/libs/ammo.js"></script>
+
+		<script>
+
+			function loadOption( key ) {
+
+				var options = location.href.split( '?' )[ 1 ];
+
+				if ( ! options ) return null;
+
+				var optionArray = options.split( '&' );
+
+				for ( var i = 0, il = optionArray.length; i < il; i ++ ) {
+
+					var tmp = optionArray[ i ].split( '=' );
+
+					if ( tmp[ 0 ].toLowerCase() === key ) return tmp[ 1 ];
+
+				}
+
+				return null;
+
+			}
+
+			var objectNum = parseInt( loadOption( 'num' ) ) || 100;
+
+			var container;
+			var camera, scene, renderer;
+
+			var world;
+			var boxes = [];
+			var boxSize = 4;
+
+			var clock = new THREE.Clock();
+
+			init();
+			animate();
+
+			function init() {
+
+				container = document.createElement( 'div' );
+				document.body.appendChild( container );
+
+				camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 2000 );
+				camera.position.z = 100;
+
+				// scene
+
+				scene = new THREE.Scene();
+				scene.background = new THREE.Color( 0xffffff );
+
+				var ambient = new THREE.AmbientLight( 0x666666 );
+				scene.add( ambient );
+
+				var directionalLight = new THREE.DirectionalLight( 0xaaaaaa );
+				directionalLight.position.set( -1, 1, 1 ).normalize();
+				scene.add( directionalLight );
+
+				//
+
+				renderer = new THREE.WebGLRenderer( { antialias: true } );
+				renderer.setPixelRatio( window.devicePixelRatio );
+				renderer.setSize( window.innerWidth, window.innerHeight );
+				renderer.setClearColor( new THREE.Color( 0xffffff ) );
+
+				container.appendChild( renderer.domElement );
+
+				world = createWorld();
+
+				scene.add( createGround() );
+
+				var geometry = new THREE.BoxBufferGeometry( boxSize, boxSize, boxSize );
+				var material = new THREE.MeshStandardMaterial( { color: 0x444444 } );
+
+				for ( var i = 0; i < objectNum; i ++ ) {
+
+					var mesh = new THREE.Mesh( geometry, material );
+					mesh.position.x = ( Math.random() - 0.5 ) * boxSize * 5;
+					mesh.position.y = ( Math.random() - 0.5 ) * boxSize * 5 + 30;
+					mesh.position.z = ( Math.random() - 0.5 ) * boxSize * 5;
+
+					var body = createRigidBody( boxSize / 2, boxSize / 2, boxSize / 2, 1.0, mesh.position );
+					body.setSleepingThresholds( 0, 0 );
+					world.addRigidBody( body );
+					mesh.body = body;
+					mesh.ammoTransform = new Ammo.btTransform();
+					mesh.ammoQuaternion = new Ammo.btQuaternion( 0, 0, 0, 1 );
+
+					boxes.push( mesh );
+					scene.add( mesh );
+
+				}
+
+				window.addEventListener( 'resize', onWindowResize, false );
+
+			}
+
+			function onWindowResize () {
+
+				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.updateProjectionMatrix();
+
+				renderer.setSize( window.innerWidth, window.innerHeight );
+
+			}
+
+			function createWorld() {
+
+				var config = new Ammo.btDefaultCollisionConfiguration();
+				var dispatcher = new Ammo.btCollisionDispatcher( config );
+				var cache = new Ammo.btDbvtBroadphase();
+				var solver = new Ammo.btSequentialImpulseConstraintSolver();
+				var world = new Ammo.btDiscreteDynamicsWorld( dispatcher, cache, solver, config );
+				world.setGravity( new Ammo.btVector3( 0, - 9.8 * 10, 0 ) );
+
+				return world;
+
+			}
+
+			function createRigidBody( width, height, depth, weight, position ) {
+
+				var shape = new Ammo.btBoxShape( new Ammo.btVector3( width, height, depth ) );
+				var localInertia = new Ammo.btVector3( 0, 0, 0 );
+				shape.calculateLocalInertia( weight, localInertia );
+
+				var form = new Ammo.btTransform();
+				form.setIdentity();
+				form.setOrigin( new Ammo.btVector3( position.x, position.y, position.z ) );
+				var state = new Ammo.btDefaultMotionState( form );
+				var info = new Ammo.btRigidBodyConstructionInfo( weight, state, shape, localInertia );
+
+				return new Ammo.btRigidBody( info );
+
+			}
+
+			function createGround () {
+
+				var gridHelper = new THREE.GridHelper( 1000, 500 );
+				gridHelper.position.y = - 15;
+
+				var body = createRigidBody( 1000, 1, 1000, 0, gridHelper.position );
+				body.setRestitution( 1 );
+				body.setFriction( 1 );
+				body.setDamping( 0, 0 );
+				body.setSleepingThresholds( 0, 0 );
+				world.addRigidBody( body );
+
+				return gridHelper;
+
+			}
+
+			function updatePhysics( delta ) {
+
+				world.stepSimulation( delta, 2, 1 / 60 );
+				updateBoxes();
+
+			}
+
+			function updateBoxes() {
+
+				for ( var i = 0, il = boxes.length; i < il; i ++ ) {
+
+					var box = boxes[ i ];
+					var body = box.body;
+					var form = box.ammoTransform;
+					var q = box.ammoQuaternion;
+
+					body.getMotionState().getWorldTransform( form );
+					var o = form.getOrigin();
+					form.getBasis().getRotation( q );
+					box.position.set( o.x(), o.y(), o.z() );
+					box.quaternion.set( q.x(), q.y(), q.z(), q.w() );
+
+				}
+
+			}
+
+			function animate() {
+
+				renderer.setAnimationLoop( render );
+
+			}
+
+			function render() {
+
+				updatePhysics( clock.getDelta() );
+				renderer.render( scene, camera );
+
+			}
+
+		</script>
+
+	</body>
+</html>
