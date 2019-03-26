@@ -89,5 +89,21 @@
     "mobile": true,
     "interactive": true,
     "skipReferenceImageTest": true
+  },
+  {
+    "id": "performance_original",
+    "engine": "three.js",
+    "url": "threejs-pr14910/webgl_performance.html",
+    "name": "Performance test without Three.js PR14910",
+    "mobile": true,
+    "skipReferenceImageTest": true
+  },
+  {
+    "id": "performance_lazy",
+    "engine": "three.js",
+    "url": "threejs-pr14910/webgl_performance_pr14910.html",
+    "name": "Performance test with Three.js PR14910",
+    "mobile": true,
+    "skipReferenceImageTest": true
   }
 ]
