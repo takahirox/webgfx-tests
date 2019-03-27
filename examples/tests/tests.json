@@ -105,5 +105,21 @@
     "name": "Performance test with Three.js PR14910",
     "mobile": true,
     "skipReferenceImageTest": true
+  },
+  {
+    "id": "fbx_animation",
+    "engine": "three.js",
+    "url": "threejs-pr14910/webgl_loader_fbx.html",
+    "name": "Three.js FBX animation",
+    "mobile": true,
+    "skipReferenceImageTest": true
+  },
+  {
+    "id": "fbx_animation_lazy",
+    "engine": "three.js",
+    "url": "threejs-pr14910/webgl_loader_fbx_pr14910.html",
+    "name": "Three.js FBX animation with PR14910",
+    "mobile": true,
+    "skipReferenceImageTest": true
   }
 ]
