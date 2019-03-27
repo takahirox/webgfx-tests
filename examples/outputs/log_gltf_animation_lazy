@@ -3,22 +3,22 @@
   "stats": {
     "perf": {
       "fps": {
-        "min": 34.260822749346964,
-        "max": 42.2218052168705,
-        "avg": 40.09688975504027,
-        "standard_deviation": 1.3670848249980343
+        "min": 34.918813758347824,
+        "max": 42.2852847208889,
+        "avg": 39.933921248255366,
+        "standard_deviation": 1.4407065603046736
       },
       "dt": {
-        "min": 10.715000000345754,
-        "max": 51.045000000158325,
-        "avg": 24.951784820684004,
-        "standard_deviation": 5.005907838380439
+        "min": 13.029999998252606,
+        "max": 51.715000001422595,
+        "avg": 25.05614678899126,
+        "standard_deviation": 6.25823647098912
       },
       "cpu": {
-        "min": 49.926535410006764,
-        "max": 97.3509933771866,
-        "avg": 89.98093229318818,
-        "standard_deviation": 4.998545219893126
+        "min": 55.40945567263334,
+        "max": 97.35883424432156,
+        "avg": 89.8123986139344,
+        "standard_deviation": 4.420545433793543
       }
     },
     "webgl": {
@@ -55,15 +55,15 @@
     }
   },
   "numFrames": 1200,
-  "totalTime": 31558.740000000398,
-  "timeToFirstFrame": 1569.4399999993038,
-  "avgFps": 40.014271756925176,
-  "numStutterEvents": 294,
-  "totalRenderTime": 29989.300000001094,
-  "cpuTime": 26968.089999991207,
-  "cpuIdleTime": 2949.1000000089116,
-  "cpuIdlePerc": 9.833840736558718,
-  "pageLoadTime": 1531.684999999925,
+  "totalTime": 31660.055000000284,
+  "timeToFirstFrame": 1549.3100000021514,
+  "avgFps": 39.85288308210489,
+  "numStutterEvents": 399,
+  "totalRenderTime": 30110.744999998133,
+  "cpuTime": 27000.885000026756,
+  "cpuIdleTime": 3041.434999973717,
+  "cpuIdlePerc": 10.100829454647853,
+  "pageLoadTime": 1508.3300000005693,
   "result": "pass",
   "logs": {
     "errors": [],
@@ -87,22 +87,22 @@
   "stats": {
     "perf": {
       "fps": {
-        "min": 30.329289428160013,
-        "max": 42.28826500635719,
-        "avg": 39.473892504595575,
-        "standard_deviation": 2.553308730136022
+        "min": 35.83346397604387,
+        "max": 43.13546933736729,
+        "avg": 40.54205515949568,
+        "standard_deviation": 1.3434464001629896
       },
       "dt": {
-        "min": 13.175000000046566,
-        "max": 53.57000000003609,
-        "avg": 25.359382819015643,
-        "standard_deviation": 6.359318875991235
+        "min": 10.014999999839347,
+        "max": 60.2550000003248,
+        "avg": 24.673281901582556,
+        "standard_deviation": 4.84381947244498
       },
       "cpu": {
-        "min": 49.96575007247718,
-        "max": 97.60765550019362,
-        "avg": 89.8967948509432,
-        "standard_deviation": 4.628881632969204
+        "min": 52.581709782492865,
+        "max": 97.07935341687303,
+        "avg": 89.60100768849661,
+        "standard_deviation": 5.555166014545266
       }
     },
     "webgl": {
@@ -139,15 +139,15 @@
     }
   },
   "numFrames": 1200,
-  "totalTime": 31995.349999999235,
-  "timeToFirstFrame": 1521.600000000035,
-  "avgFps": 39.378153328685556,
-  "numStutterEvents": 387,
-  "totalRenderTime": 30473.7499999992,
-  "cpuTime": 27362.170000029437,
-  "cpuIdleTime": 3043.72999997031,
-  "cpuIdlePerc": 9.988038885829246,
-  "pageLoadTime": 1482.2149999999965,
+  "totalTime": 31209.115000001475,
+  "timeToFirstFrame": 1554.2000000023108,
+  "avgFps": 40.46546752873963,
+  "numStutterEvents": 241,
+  "totalRenderTime": 29654.914999999164,
+  "cpuTime": 26527.700000042387,
+  "cpuIdleTime": 3055.564999955095,
+  "cpuIdlePerc": 10.303738857303017,
+  "pageLoadTime": 1515.1150000019697,
   "result": "pass",
   "logs": {
     "errors": [],
@@ -171,22 +171,22 @@
   "stats": {
     "perf": {
       "fps": {
-        "min": 34.72911291899973,
-        "max": 42.29124571232024,
-        "avg": 39.91955834907342,
-        "standard_deviation": 1.6543688480327683
+        "min": 34.78865889703407,
+        "max": 42.5743276799888,
+        "avg": 39.76114612316701,
+        "standard_deviation": 1.5612040454586193
       },
       "dt": {
-        "min": 10.36999999996624,
-        "max": 54.23500000142667,
-        "avg": 25.080221017515136,
-        "standard_deviation": 5.1985825613983065
+        "min": 10.44000000183587,
+        "max": 52.27499999818974,
+        "avg": 25.15901167639457,
+        "standard_deviation": 6.456395262625571
       },
       "cpu": {
-        "min": 52.84424853129971,
-        "max": 97.49857873394805,
-        "avg": 89.64090339379418,
-        "standard_deviation": 4.878477800277147
+        "min": 53.23758821946818,
+        "max": 97.47938384523717,
+        "avg": 89.60489851372434,
+        "standard_deviation": 4.865444912056339
       }
     },
     "webgl": {
@@ -223,15 +223,15 @@
     }
   },
   "numFrames": 1200,
-  "totalTime": 31675.185000000056,
-  "timeToFirstFrame": 1529.884999999922,
-  "avgFps": 39.80720045910954,
-  "numStutterEvents": 322,
-  "totalRenderTime": 30145.300000000134,
-  "cpuTime": 27014.615000010963,
-  "cpuIdleTime": 3056.5699999897333,
-  "cpuIdlePerc": 10.139457892240978,
-  "pageLoadTime": 1489.3800000008923,
+  "totalTime": 31739.825000000565,
+  "timeToFirstFrame": 1507.354999997915,
+  "avgFps": 39.69242341098477,
+  "numStutterEvents": 381,
+  "totalRenderTime": 30232.47000000265,
+  "cpuTime": 27026.760000022477,
+  "cpuIdleTime": 3138.894999974582,
+  "cpuIdlePerc": 10.382529115134512,
+  "pageLoadTime": 1465.3199999993376,
   "result": "pass",
   "logs": {
     "errors": [],
@@ -255,22 +255,22 @@
   "stats": {
     "perf": {
       "fps": {
-        "min": 36.353721712318375,
-        "max": 42.07770349262986,
-        "avg": 39.71177069703096,
-        "standard_deviation": 1.3349176614457323
+        "min": 29.915808368263416,
+        "max": 41.90626964344191,
+        "avg": 39.59041403466656,
+        "standard_deviation": 1.4672636668194614
       },
       "dt": {
-        "min": 10.754999999335269,
-        "max": 48.800000000483124,
-        "avg": 25.18692243536371,
-        "standard_deviation": 6.497807212935572
+        "min": 11.005000000295695,
+        "max": 46.49499999868567,
+        "avg": 25.28711009174214,
+        "standard_deviation": 5.5713272280087125
       },
       "cpu": {
-        "min": 57.182377050311544,
-        "max": 97.48237663729321,
-        "avg": 90.86379269538831,
-        "standard_deviation": 3.9765836237110364
+        "min": 58.94884827495458,
+        "max": 97.4005637305543,
+        "avg": 89.39119769973921,
+        "standard_deviation": 4.785578774742327
       }
     },
     "webgl": {
@@ -307,15 +307,15 @@
     }
   },
   "numFrames": 1200,
-  "totalTime": 31832.62999999897,
-  "timeToFirstFrame": 1556.7549999996118,
-  "avgFps": 39.63551837890814,
-  "numStutterEvents": 448,
-  "totalRenderTime": 30275.87499999936,
-  "cpuTime": 27449.53500003794,
-  "cpuIdleTime": 2749.58499996319,
-  "cpuIdlePerc": 9.081768900034263,
-  "pageLoadTime": 1515.3899999986606,
+  "totalTime": 31875.16500000129,
+  "timeToFirstFrame": 1492.5199999997858,
+  "avgFps": 39.49623214173554,
+  "numStutterEvents": 376,
+  "totalRenderTime": 30382.645000001503,
+  "cpuTime": 27179.514999996172,
+  "cpuIdleTime": 3139.7300000026007,
+  "cpuIdlePerc": 10.333958745206171,
+  "pageLoadTime": 1458.440000002156,
   "result": "pass",
   "logs": {
     "errors": [],
@@ -339,22 +339,22 @@
   "stats": {
     "perf": {
       "fps": {
-        "min": 35.614913745013105,
-        "max": 42.13384518172264,
-        "avg": 39.772528627610946,
-        "standard_deviation": 1.3682182279212511
+        "min": 36.94296929098498,
+        "max": 42.62574595066883,
+        "avg": 40.484706889946516,
+        "standard_deviation": 1.230673029100045
       },
       "dt": {
-        "min": 11.03500000135682,
-        "max": 49.33499999970081,
-        "avg": 25.160821517932014,
-        "standard_deviation": 5.929666148306849
+        "min": 10.080000000016298,
+        "max": 47.589999998308485,
+        "avg": 24.715450375313438,
+        "standard_deviation": 4.715778061478739
       },
       "cpu": {
-        "min": 55.99821448779626,
-        "max": 97.99526440307531,
-        "avg": 89.46749289372453,
-        "standard_deviation": 4.607425033334569
+        "min": 53.79281361235925,
+        "max": 97.60642326361608,
+        "avg": 89.52000148003658,
+        "standard_deviation": 5.245282262889177
       }
     },
     "webgl": {
@@ -391,15 +391,15 @@
     }
   },
   "numFrames": 1200,
-  "totalTime": 31768.299999999726,
-  "timeToFirstFrame": 1531.8050000005314,
-  "avgFps": 39.68713966351034,
-  "numStutterEvents": 398,
-  "totalRenderTime": 30236.494999999195,
-  "cpuTime": 27018.945000027088,
-  "cpuIdleTime": 3148.87999997336,
-  "cpuIdlePerc": 10.414170028548098,
-  "pageLoadTime": 1493.0750000003172,
+  "totalTime": 31201.87000000078,
+  "timeToFirstFrame": 1497.060000001511,
+  "avgFps": 40.397497913638546,
+  "numStutterEvents": 257,
+  "totalRenderTime": 29704.80999999927,
+  "cpuTime": 26584.904999988794,
+  "cpuIdleTime": 3048.9200000120036,
+  "cpuIdlePerc": 10.264061611611313,
+  "pageLoadTime": 1455.3950000008626,
   "result": "pass",
   "logs": {
     "errors": [],
@@ -423,22 +423,22 @@
   "stats": {
     "perf": {
       "fps": {
-        "min": 12,
-        "max": 28.708133971291865,
-        "avg": 25.33815482755298,
-        "standard_deviation": 2.3233132568676
+        "min": 13.698630136986301,
+        "max": 28.846153846153847,
+        "avg": 25.466573767853827,
+        "standard_deviation": 2.1833783430593514
       },
       "dt": {
-        "min": 32,
-        "max": 132,
-        "avg": 39.571309424520415,
-        "standard_deviation": 7.744548139933419
+        "min": 33,
+        "max": 133,
+        "avg": 39.347789824854004,
+        "standard_deviation": 7.510236086452845
       },
       "cpu": {
-        "min": 28.97196261682243,
+        "min": 27.43362831858407,
         "max": 100,
-        "avg": 91.65822044890008,
-        "standard_deviation": 10.804705345858213
+        "avg": 91.80991593462193,
+        "standard_deviation": 10.468539895710999
       }
     },
     "webgl": {
@@ -475,15 +475,15 @@
     }
   },
   "numFrames": 1200,
-  "totalTime": 50145,
-  "timeToFirstFrame": 2650,
-  "avgFps": 25.26581745446889,
-  "numStutterEvents": 96,
-  "totalRenderTime": 47495,
-  "cpuTime": 42778,
-  "cpuIdleTime": 4668,
-  "cpuIdlePerc": 9.8284029897884,
-  "pageLoadTime": 2573,
+  "totalTime": 49845,
+  "timeToFirstFrame": 2618,
+  "avgFps": 25.409193893323735,
+  "numStutterEvents": 78,
+  "totalRenderTime": 47227,
+  "cpuTime": 42677,
+  "cpuIdleTime": 4501,
+  "cpuIdlePerc": 9.530565142820844,
+  "pageLoadTime": 2547,
   "result": "pass",
   "logs": {
     "errors": [],
@@ -507,22 +507,22 @@
   "stats": {
     "perf": {
       "fps": {
-        "min": 11.857707509881424,
-        "max": 28.436018957345972,
-        "avg": 25.36204355747555,
-        "standard_deviation": 2.307411355983174
+        "min": 11.904761904761905,
+        "max": 28.985507246376812,
+        "avg": 25.401619391839585,
+        "standard_deviation": 2.298551922783417
       },
       "dt": {
-        "min": 33,
-        "max": 133,
-        "avg": 39.535446205171006,
-        "standard_deviation": 7.74447224297232
+        "min": 32,
+        "max": 149,
+        "avg": 39.46705587989988,
+        "standard_deviation": 7.5827626340063645
       },
       "cpu": {
-        "min": 25.833333333333332,
+        "min": 30.555555555555557,
         "max": 100,
-        "avg": 91.52543264179654,
-        "standard_deviation": 10.852646703831583
+        "avg": 91.52943625127824,
+        "standard_deviation": 10.719026253939585
       }
     },
     "webgl": {
@@ -559,15 +559,15 @@
     }
   },
   "numFrames": 1200,
-  "totalTime": 50054,
-  "timeToFirstFrame": 2604,
-  "avgFps": 25.28977871443625,
-  "numStutterEvents": 88,
-  "totalRenderTime": 47450,
-  "cpuTime": 42702,
-  "cpuIdleTime": 4701,
-  "cpuIdlePerc": 9.9072708113804,
-  "pageLoadTime": 2535,
+  "totalTime": 49994,
+  "timeToFirstFrame": 2623,
+  "avgFps": 25.33195414916299,
+  "numStutterEvents": 74,
+  "totalRenderTime": 47371,
+  "cpuTime": 42653,
+  "cpuIdleTime": 4668,
+  "cpuIdlePerc": 9.854130164024403,
+  "pageLoadTime": 2555,
   "result": "pass",
   "logs": {
     "errors": [],
@@ -591,22 +591,22 @@
   "stats": {
     "perf": {
       "fps": {
-        "min": 13.636363636363637,
+        "min": 14.150943396226415,
         "max": 28.708133971291865,
-        "avg": 25.156562986157333,
-        "standard_deviation": 2.1129769642847185
+        "avg": 25.22361015933986,
+        "standard_deviation": 2.0809098146747904
       },
       "dt": {
         "min": 33,
-        "max": 131,
-        "avg": 39.821517931609655,
-        "standard_deviation": 7.691822983867327
+        "max": 128,
+        "avg": 39.7080900750625,
+        "standard_deviation": 7.58855595110685
       },
       "cpu": {
-        "min": 29.807692307692307,
+        "min": 31.428571428571427,
         "max": 100,
-        "avg": 91.14796514506303,
-        "standard_deviation": 11.255208518763991
+        "avg": 91.49021111398754,
+        "standard_deviation": 10.896752222440734
       }
     },
     "webgl": {
@@ -643,15 +643,15 @@
     }
   },
   "numFrames": 1200,
-  "totalTime": 50401,
-  "timeToFirstFrame": 2606,
-  "avgFps": 25.107228789622347,
-  "numStutterEvents": 106,
-  "totalRenderTime": 47795,
-  "cpuTime": 42806,
-  "cpuIdleTime": 4940,
-  "cpuIdlePerc": 10.3358091850612,
-  "pageLoadTime": 2513,
+  "totalTime": 50272,
+  "timeToFirstFrame": 2614,
+  "avgFps": 25.179403248143018,
+  "numStutterEvents": 105,
+  "totalRenderTime": 47658,
+  "cpuTime": 42838,
+  "cpuIdleTime": 4772,
+  "cpuIdlePerc": 10.013009358344874,
+  "pageLoadTime": 2534,
   "result": "pass",
   "logs": {
     "errors": [],
@@ -675,22 +675,22 @@
   "stats": {
     "perf": {
       "fps": {
-        "min": 12,
-        "max": 28.846153846153847,
-        "avg": 25.388352385061747,
-        "standard_deviation": 2.2617434493931157
+        "min": 12.76595744680851,
+        "max": 28.708133971291865,
+        "avg": 25.386977896955557,
+        "standard_deviation": 2.3604308640386487
       },
       "dt": {
-        "min": 33,
-        "max": 133,
-        "avg": 39.49207673060874,
-        "standard_deviation": 7.66683632646682
+        "min": 32,
+        "max": 135,
+        "avg": 39.449541284403665,
+        "standard_deviation": 7.878598096302284
       },
       "cpu": {
-        "min": 29.906542056074766,
+        "min": 25.6,
         "max": 100,
-        "avg": 91.4420283890796,
-        "standard_deviation": 10.936326710588277
+        "avg": 91.51285597700532,
+        "standard_deviation": 10.896553894889376
       }
     },
     "webgl": {
@@ -727,15 +727,15 @@
     }
   },
   "numFrames": 1200,
-  "totalTime": 50043,
-  "timeToFirstFrame": 2642,
-  "avgFps": 25.31592160502943,
-  "numStutterEvents": 105,
-  "totalRenderTime": 47401,
-  "cpuTime": 42591,
-  "cpuIdleTime": 4760,
-  "cpuIdlePerc": 10.041982236661674,
-  "pageLoadTime": 2512,
+  "totalTime": 49950,
+  "timeToFirstFrame": 2596,
+  "avgFps": 25.341048274696963,
+  "numStutterEvents": 94,
+  "totalRenderTime": 47354,
+  "cpuTime": 42575,
+  "cpuIdleTime": 4725,
+  "cpuIdlePerc": 9.97803775816193,
+  "pageLoadTime": 2501,
   "result": "pass",
   "logs": {
     "errors": [],
@@ -759,22 +759,22 @@
   "stats": {
     "perf": {
       "fps": {
-        "min": 12,
-        "max": 28.708133971291865,
-        "avg": 25.082529799845062,
-        "standard_deviation": 2.298069141074691
+        "min": 11.764705882352942,
+        "max": 28.846153846153847,
+        "avg": 25.3242888547068,
+        "standard_deviation": 2.3141874001025524
       },
       "dt": {
         "min": 33,
-        "max": 135,
-        "avg": 39.93828190158465,
-        "standard_deviation": 7.783530486844051
+        "max": 130,
+        "avg": 39.597164303586275,
+        "standard_deviation": 7.5590767734503075
       },
       "cpu": {
-        "min": 29.807692307692307,
+        "min": 27.522935779816514,
         "max": 100,
-        "avg": 91.12941423653783,
-        "standard_deviation": 11.174218480883736
+        "avg": 91.51520899039191,
+        "standard_deviation": 10.88151406867746
       }
     },
     "webgl": {
@@ -811,15 +811,15 @@
     }
   },
   "numFrames": 1200,
-  "totalTime": 50621,
-  "timeToFirstFrame": 2684,
-  "avgFps": 25.032855623005194,
-  "numStutterEvents": 106,
-  "totalRenderTime": 47937,
-  "cpuTime": 42916,
-  "cpuIdleTime": 4970,
-  "cpuIdlePerc": 10.367774370527984,
-  "pageLoadTime": 2530,
+  "totalTime": 50194,
+  "timeToFirstFrame": 2670,
+  "avgFps": 25.250399797996803,
+  "numStutterEvents": 90,
+  "totalRenderTime": 47524,
+  "cpuTime": 42764,
+  "cpuIdleTime": 4713,
+  "cpuIdlePerc": 9.917094520663245,
+  "pageLoadTime": 2585,
   "result": "pass",
   "logs": {
     "errors": [],
