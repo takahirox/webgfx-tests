@@ -107,6 +107,14 @@
     "skipReferenceImageTest": true
   },
   {
+    "id": "performance_lazy2",
+    "engine": "three.js",
+    "url": "threejs-pr14910/webgl_performance_pr14910_2.html",
+    "name": "Performance test with Three.js PR14910_2",
+    "mobile": true,
+    "skipReferenceImageTest": true
+  },
+  {
     "id": "fbx_animation",
     "engine": "three.js",
     "url": "threejs-pr14910/webgl_loader_fbx.html",
