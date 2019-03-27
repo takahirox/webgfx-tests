@@ -121,5 +121,21 @@
     "name": "Three.js FBX animation with PR14910",
     "mobile": true,
     "skipReferenceImageTest": true
+  },
+  {
+    "id": "gltf_animation",
+    "engine": "three.js",
+    "url": "threejs-pr14910/webgl_animation_gltf.html",
+    "name": "Three.js glTF animation",
+    "mobile": true,
+    "skipReferenceImageTest": true
+  },
+  {
+    "id": "gltf_animation_lazy",
+    "engine": "three.js",
+    "url": "threejs-pr14910/webgl_animation_gltf_pr14910.html",
+    "name": "Three.js glTF animation with PR14910",
+    "mobile": true,
+    "skipReferenceImageTest": true
   }
 ]
