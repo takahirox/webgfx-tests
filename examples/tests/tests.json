@@ -137,5 +137,13 @@
     "name": "Three.js glTF animation with PR14910",
     "mobile": true,
     "skipReferenceImageTest": true
+  },
+  {
+    "id": "gltf_animation_lazy2",
+    "engine": "three.js",
+    "url": "threejs-pr14910/webgl_animation_gltf_pr14910_2.html",
+    "name": "Three.js glTF animation with PR14910_2",
+    "mobile": true,
+    "skipReferenceImageTest": true
   }
 ]
