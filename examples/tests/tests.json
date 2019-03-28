@@ -155,6 +155,22 @@
     "skipReferenceImageTest": true
   },
   {
+    "id": "performance_instancing",
+    "engine": "three.js",
+    "url": "threejs/performance_instancing.html",
+    "name": "Geometry instancing intensive test",
+    "mobile": true,
+    "skipReferenceImageTest": true
+  },
+  {
+    "id": "performance_instancing_simple",
+    "engine": "three.js",
+    "url": "threejs/performance_instancing_simple.html",
+    "name": "Simple Geometry instancing intensive test",
+    "mobile": true,
+    "skipReferenceImageTest": true
+  },
+  {
     "id": "performance_gpgpu",
     "engine": "three.js",
     "url": "threejs/performance_gpgpu.html",
