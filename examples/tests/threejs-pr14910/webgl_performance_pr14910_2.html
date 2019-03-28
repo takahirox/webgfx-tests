@@ -82,12 +82,13 @@
 					for ( var i = 0; i < objectNum; i ++ ) {
 
 						var mesh = new THREE.Mesh( geometry, material );
+						mesh.userData.rotation = new THREE.Euler();
 
 						mesh.position.x = Math.random() * 8000 - 4000;
 						mesh.position.y = Math.random() * 8000 - 4000;
 						mesh.position.z = Math.random() * 8000 - 4000;
-						mesh.rotation.x = Math.random() * 2 * Math.PI;
-						mesh.rotation.y = Math.random() * 2 * Math.PI;
+						mesh.userData.rotation.x = Math.random() * 2 * Math.PI;
+						mesh.userData.rotation.y = Math.random() * 2 * Math.PI;
 						mesh.scale.x = mesh.scale.y = mesh.scale.z = Math.random() * 50 + 100;
 
 						objects.push( mesh );
@@ -150,8 +151,13 @@
 
 				for ( var i = 0, il = objects.length; i < il; i ++ ) {
 
-					objects[ i ].rotation.x += 0.01;
-					objects[ i ].rotation.y += 0.02;
+					var rotation = objects[ i ].userData.rotation;
+					var quaternion = objects[ i ].quaternion;
+
+					rotation.x += 0.01;
+					rotation.y += 0.02;
+
+					quaternion.setFromEuler( rotation );
 
 				}
 
