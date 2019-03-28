@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>three.js performance - instancing simple</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<style>
+		body {
+			color: #ffffff;
+			font-family: Monospace;
+			font-size: 13px;
+			text-align: center;
+			font-weight: bold;
+			background-color: #000000;
+			margin: 0px;
+			overflow: hidden;
+		}
+
+		#info {
+			position: absolute;
+			top: 0px;
+			width: 100%;
+			padding: 5px;
+		}
+
+		a {
+			color: #ffffff;
+		}
+
+		#webglmessage a {
+			color: #da0;
+		}
+
+		#notSupported {
+			width: 50%;
+			margin: auto;
+			border: 2px red solid;
+			margin-top: 20px;
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+
+	<div id="container"></div>
+
+	<script src="three.js"></script>
+
+	<script>
+
+		function loadOption( key ) {
+
+			var options = location.href.split( '?' )[ 1 ];
+
+			if ( ! options ) return null;
+
+			var optionArray = options.split( '&' );
+
+			for ( var i = 0, il = optionArray.length; i < il; i ++ ) {
+
+				var tmp = optionArray[ i ].split( '=' );
+
+				if ( tmp[ 0 ].toLowerCase() === key ) return tmp[ 1 ];
+
+			}
+
+			return null;
+
+		}
+
+		var objectNum = parseInt( loadOption( 'num' ) ) || 10000;
+
+		var container;
+
+		var camera, scene, renderer;
+
+		var clock = new THREE.Clock();
+
+		init();
+		animate();
+
+		function init() {
+
+			container = document.getElementById( 'container' );
+
+			camera = new THREE.PerspectiveCamera( 50, window.innerWidth / window.innerHeight, 1, 10 );
+			camera.position.z = 2;
+
+			scene = new THREE.Scene();
+			scene.background = new THREE.Color( 0x000000 );
+
+			// geometry
+
+			var baseGeometry = new THREE.BoxBufferGeometry( 0.02, 0.02, 0.02 );
+
+			var offsets = [];
+			var colors = [];
+
+			// instanced attributes
+
+			for ( var i = 0; i < objectNum; i ++ ) {
+
+				offsets.push( Math.random() - 0.5 );
+				offsets.push( Math.random() - 0.5 );
+				offsets.push( Math.random() - 0.5 );
+
+				colors.push( Math.random() );
+				colors.push( Math.random() );
+				colors.push( Math.random() );
+
+			}
+
+			var geometry = new THREE.InstancedBufferGeometry();
+			geometry.maxInstancedCount = objectNum;
+
+			geometry.addAttribute( 'position', baseGeometry.getAttribute( 'position' ) );
+			geometry.setIndex( baseGeometry.getIndex() );
+			geometry.addAttribute( 'instanceOffset', new THREE.InstancedBufferAttribute( new Float32Array( offsets ), 3 ) );
+			geometry.addAttribute( 'instanceColor', new THREE.InstancedBufferAttribute( new Float32Array( colors ), 3 ) );
+
+			// material
+
+			var material = new THREE.MeshBasicMaterial( {
+				color: 0xffffff
+			} );
+
+			material.onBeforeCompile = function ( shader ) {
+
+				// console.log( shader.uniforms );
+				// console.log( shader.vertexShader );
+				// console.log( shader.fragmentShader );
+
+				shader.vertexShader = shader.vertexShader
+					.replace( '#include <common>\n',
+						[ '#include <common>',
+						  'attribute vec3 instanceOffset;',
+						  'attribute vec3 instanceColor;',
+						  'varying vec3 vInstanceColor;' ].join( '\n' ) + '\n' )
+					.replace( '#include <begin_vertex>\n',
+						[ 'vec3 transformed = vec3( position ) + instanceOffset;',
+						  'vInstanceColor = instanceColor;' ].join( '\n' ) + '\n' );
+
+				shader.fragmentShader = shader.fragmentShader
+					.replace( '#include <common>\n',
+						[ '#include <common>',
+						  'varying vec3 vInstanceColor;' ].join( '\n' ) + '\n' )
+					.replace( 'vec4 diffuseColor = vec4( diffuse, opacity );\n',
+						'vec4 diffuseColor = vec4( diffuse * vInstanceColor, opacity );\n' );
+
+			}
+
+			//
+
+			var mesh = new THREE.Mesh( geometry, material );
+			scene.add( mesh );
+
+			//
+
+			renderer = new THREE.WebGLRenderer();
+			renderer.setPixelRatio( window.devicePixelRatio );
+			renderer.setSize( window.innerWidth, window.innerHeight );
+			renderer.gammaOutput = true;
+			container.appendChild( renderer.domElement );
+
+			//
+
+			window.addEventListener( 'resize', onWindowResize, false );
+
+		}
+
+		function onWindowResize() {
+
+			camera.aspect = window.innerWidth / window.innerHeight;
+			camera.updateProjectionMatrix();
+
+			renderer.setSize( window.innerWidth, window.innerHeight );
+
+		}
+
+		//
+
+		function animate() {
+
+			requestAnimationFrame( animate );
+
+			render();
+
+		}
+
+		function render() {
+
+			scene.children[ 0 ].rotation.y += 0.01;
+
+			renderer.render( scene, camera );
+
+		}
+
+	</script>
+
+</body>
+
+</html>
