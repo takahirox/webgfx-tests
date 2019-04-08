@@ -7,6 +7,7 @@ import {InputRecorder, InputReplayer} from 'input-events-recorder';
 import EventListenerManager from './event-listeners';
 import InputHelpers from './input-helpers';
 import WebAudioHook from './webaudio-hook';
+import WebGLTextureHook from './webgltexture-hook';
 import {resizeImageData} from './image-utils';
 import pixelmatch from 'pixelmatch';
 import WebGLStats from 'webgl-stats';
@@ -83,6 +84,7 @@ window.TESTER = {
 
     if (++this.referenceTestPreTickCalledCount == 1) {
       this.stats.frameStart();
+      WebGLTextureHook.frameStart(performance.realNow());
 
       if (!this.canvas) {
         // We assume the last webgl context being initialized is the one used to rendering
@@ -442,6 +444,7 @@ window.TESTER = {
           webgl: WebGLStats.getSummary()
         },
         webaudio: WebAudioHook.stats,
+        webgltexture: WebGLTextureHook.getSummary(),
         numFrames: this.numFramesToRender,
         totalTime: totalTime,
         timeToFirstFrame: this.firstFrameTime - pageInitTime,
@@ -761,6 +764,10 @@ window.TESTER = {
 
     if (!GFXTESTS_CONFIG.dontOverrideWebAudio) {
       WebAudioHook.enable(typeof parameters['fake-webaudio'] !== 'undefined');
+    }
+
+    if (!GFXTESTS_CONFIG.dontOverrideWebGLTexture) {
+      WebGLTextureHook.enable(performance.realNow());
     }
 
     Math.random = seedrandom(this.randomSeed);
