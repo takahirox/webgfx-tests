@@ -1,5 +1,18 @@
 [
   {
+    "id": "hubs",
+    "engine": "three.js",
+    "url": "https://localhost:8081/hub.html?hub_id=ZsdhzTZ",
+    "name": "hubs",
+    "mobile": true,
+    "apis": [
+      "WebGL"
+    ],
+    "numFrames": 400,
+    "interactive": true,
+    "skipReferenceImageTest": true
+  },
+  {
     "id": "webvr_info_3",
     "engine": "webvr.info",
     "url": "webvr.info/03-vr-presentation.html",
