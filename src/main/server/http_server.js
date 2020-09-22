@@ -163,6 +163,7 @@ function initServer(port, config, verbose, secure) {
   server
     .get('/webgfx-tests.js', (req, res) => {
       var html = fs.readFileSync(__dirname + baseFolder + 'dist/webgfx-tests.js', 'utf8');
+      res.set('Content-Type', 'application/javascript');
       res.send(html);
     })
     .post('/store_test_start', (req, res) => {
