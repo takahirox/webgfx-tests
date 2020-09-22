@@ -102,5 +102,20 @@
     "numFrames": 400,
     "interactive": true,
     "skipReferenceImageTest": true
+  },
+  {
+    "id": "hubs",
+    "engine": "Hubs",
+    "url": "https://localhost:8080/hub.html?hub_id=ZsdhzTZ",
+    "name": "Hubs lobby",
+    "mobile": true,
+    "apis": [
+      "WebGL",
+      "WebXR"
+    ],
+    "numFrames": 800,
+    "interactive": true,
+    "skipReferenceImageTest": true,
+    "hasTestCode": true
   }
 ]
