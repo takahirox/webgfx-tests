@@ -116,6 +116,7 @@
     "numFrames": 800,
     "interactive": true,
     "skipReferenceImageTest": true,
-    "hasTestCode": true
+    "hasTestCode": true,
+    "canvasId": "hubs-canvas"
   }
 ]
