@@ -27,7 +27,7 @@
     "adb-toolkit": "^0.4.16",
     "body-parser": "^1.19.0",
     "browser-features": "^1.2.1",
-    "canvas-hook": "^0.4.1",
+    "canvas-hook": "https://github.com/takahirox/canvas-hook.git#Hubs",
     "chalk": "^2.4.2",
     "cheerio": "^1.0.0-rc.3",
     "commander": "^2.20.3",
