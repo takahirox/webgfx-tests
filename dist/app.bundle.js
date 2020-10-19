@@ -1362,6 +1362,7 @@
 	    if (getOption('canvasId')) url = addGET$1(url, 'canvas-id=' + getOption('canvasId'));
 	    if (getOption('fakeWebGL')) url = addGET$1(url, 'fake-webgl');
 	    if (getOption('fakeWebAudio')) url = addGET$1(url, 'fake-webaudio');
+	    if (getOption('customStart')) url = addGET$1(url, 'custom-start');
 
 	    if (mode === 'record') {
 	      url = addGET$1(url, 'recording');

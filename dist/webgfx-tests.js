@@ -3066,6 +3066,7 @@
 	window.TESTER = {
 	  XRready: false,
 	  ready: false,
+	  appReady: false,
 	  finished: false,
 	  inputLoading: false,
 
@@ -3109,12 +3110,18 @@
 
 	  isReady: function() {
 	    // console.log(this.ready, this.XRready);
-	    return this.ready && this.XRready;
+	    return this.ready && this.XRready && this.appReady;
 	  },
 
 	  preTick: function() {
 	    if (GFXTESTS_CONFIG.preMainLoop) {
 	      GFXTESTS_CONFIG.preMainLoop();
+	    }
+
+	    if (!this.appReady) {
+	      if (typeof parameters['custom-start'] === 'undefined') {
+	        this.appReady = true;
+	      }
 	    }
 
 	    // console.log('ready', this.ready, 'xrready', this.XRready);
@@ -3205,7 +3212,7 @@
 	  },
 
 	  postTick: function () {
-	    if (!this.ready || !this.XRready) {return;}
+	    if (!this.isReady()) {return;}
 
 	    if (this.started){
 	      // console.log('<< frameend');
@@ -3858,6 +3865,7 @@
 	          return newPose;
 	        };
 	      }
+
 	      callback(performance.now(), frame);
 
 	      // If reaching the last RAF, execute all the post code
