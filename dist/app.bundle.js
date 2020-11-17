@@ -764,7 +764,7 @@
 	  return n.slice(0, 8) + '-' + n.slice(8, 12) + '-' + n.slice(12, 16) + '-' + n.slice(16, 20) + '-' + n.slice(20);
 	}
 
-	var resultsServerUrl = 'http://localhost:3333/';
+	var resultsServerUrl = location.protocol + '//localhost:3000/';
 
 	class ResultsServer {
 	  constructor() {
@@ -1754,7 +1754,7 @@
 	          test.engine && test.engine.toLowerCase().indexOf(filter) > -1 ||
 	          test.apis && test.apis.join(' ').toLowerCase().indexOf(filter) > -1 ||
 	          test.name && test.name.toLowerCase().indexOf(filter) > -1;
-	       })
+	        });
 	      }
 	    }
 	  });
