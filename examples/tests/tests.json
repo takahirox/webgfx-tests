@@ -107,7 +107,7 @@
     "id": "hubs",
     "engine": "Hubs",
     "url": "https://localhost:8080/hub.html?hub_id=ZsdhzTZ&vr_entry_type=2d_now&custom-start#Spawn_Point",
-    "name": "Hubs lobby",
+    "name": "Hubs",
     "mobile": true,
     "apis": [
       "WebGL",
