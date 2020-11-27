@@ -108,7 +108,6 @@
     "engine": "Hubs",
     "url": "https://localhost:8080/hub.html?hub_id=ZsdhzTZ&vr_entry_type=2d_now&custom-start#Spawn_Point",
     "name": "Hubs",
-    "mobile": true,
     "apis": [
       "WebGL",
       "WebXR"
@@ -118,5 +117,22 @@
     "hasTestCode": true,
     "customStart": true,
     "canvasId": "hubs-canvas"
+  },
+  {
+    "id": "hubs-mobile",
+    "engine": "Hubs",
+    "url": "https://localhost:8080/hub.html?hub_id=ZsdhzTZ&vr_entry_type=2d_now&custom-start#Spawn_Point",
+    "name": "Hubs for Mobile",
+    "mobile": true,
+    "apis": [
+      "WebGL",
+      "WebXR"
+    ],
+    "interactive": true,
+    "skipReferenceImageTest": true,
+    "hasTestCode": true,
+    "customStart": true,
+    "canvasId": "hubs-canvas",
+    "noCanvasResize": true
   }
 ]
