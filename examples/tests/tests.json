@@ -121,9 +121,43 @@
     "canvasId": "hubs-canvas"
   },
   {
+    "id": "hubs-practical",
+    "engine": "Hubs",
+    "url": "https://localhost:8080/hub.html?hub_id=xxMhPaJ&vr_entry_type=2d_now#Spawn_Point",
+    "name": "Hubs",
+    "apis": [
+      "WebGL",
+      "WebXR"
+    ],
+    "canvasWidth": 1920,
+    "canvasHeight": 1080,
+    "interactive": true,
+    "skipReferenceImageTest": true,
+    "hasTestCode": true,
+    "customStart": true,
+    "canvasId": "hubs-canvas"
+  },
+  {
     "id": "hubs-mobile",
     "engine": "Hubs",
     "url": "https://localhost:8080/hub.html?hub_id=ZsdhzTZ&vr_entry_type=2d_now#Spawn_Point",
+    "name": "Hubs for Mobile",
+    "mobile": true,
+    "apis": [
+      "WebGL",
+      "WebXR"
+    ],
+    "interactive": true,
+    "skipReferenceImageTest": true,
+    "hasTestCode": true,
+    "customStart": true,
+    "canvasId": "hubs-canvas",
+    "noCanvasResize": true
+  },
+  {
+    "id": "hubs-mobile-practical",
+    "engine": "Hubs",
+    "url": "https://localhost:8080/hub.html?hub_id=xxMhPaJ&vr_entry_type=2d_now#Spawn_Point",
     "name": "Hubs for Mobile",
     "mobile": true,
     "apis": [
