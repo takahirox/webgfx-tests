@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/MozillaReality/webgfx-tests#readme",
   "dependencies": {
-    "adb-toolkit": "^0.4.16",
+    "adb-toolkit": "https://github.com/takahirox/adb-toolkit.git#Firefox",
     "body-parser": "^1.19.0",
     "browser-features": "^1.2.1",
     "canvas-hook": "https://github.com/takahirox/canvas-hook.git#Hubs",
